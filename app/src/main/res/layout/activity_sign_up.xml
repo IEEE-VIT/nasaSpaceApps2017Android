@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorPrimary"
-    tools:context="com.ieeevit.spaceappsvellore.SignUpActivity"
     android:orientation="vertical"
     android:paddingLeft="32dp"
-    android:paddingRight="32dp">
+    android:paddingRight="32dp"
+    tools:context="com.ieeevit.spaceappsvellore.SignUpActivity">
 
     <LinearLayout
         android:id="@+id/sign_up_lv1"
@@ -19,55 +19,67 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="23sp"
-            android:padding="16dp"
+            android:layout_gravity="center_horizontal"
+            android:padding="12dp"
             android:text="Sign up"
+            android:fontFamily="sans-serif-light"
             android:textColor="#FFFFFF"
-            android:layout_gravity="center_horizontal"/>
+            android:textSize="23sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sign_up_lv2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sign_up_lv1"
+        android:orientation="vertical"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:layout_marginTop="18dp">
+
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:padding="12dp"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:text="HOW WILL YOU CONTRIBUTE?"
+            android:layout_marginBottom="12dp"
             android:textColor="@color/colorPrimaryDark"
-            android:text="WHO ARE YOU?"
-            android:layout_gravity="center_horizontal"/>
-    </LinearLayout>
+            android:textSize="16sp" />
 
-    <RelativeLayout
-        android:id="@+id/sign_up_lv2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@id/sign_up_lv1"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:orientation="vertical">
+
             <de.hdodenhof.circleimageview.CircleImageView
-                android:src="@drawable/ic_alien_technical"
                 android:id="@+id/signup_alien_technical"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
-                app:civ_border_width="2dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_alien_technical"
                 app:civ_border_color="@color/white"
-                android:layout_gravity="center_horizontal"/>
+                app:civ_border_width="1dp" />
+
             <TextView
                 android:id="@+id/textView1"
-                android:padding="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="TECHNICAL"
-                android:textSize="12sp"
-                android:textColor="#BD1E2D" />
+                android:padding="5dp"
+                android:text="ENGINEER"
+                android:textColor="#FF9800"
+                android:textSize="12sp" />
         </LinearLayout>
 
 
@@ -76,172 +88,129 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/signup_alien_mngt"
-                android:src="@drawable/ic_alien_management"
-                android:layout_gravity="center_horizontal"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
-                app:civ_border_width="2dp"
-                app:civ_border_color="@color/white"/>
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_alien_management"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="1dp" />
+
             <TextView
                 android:id="@+id/textView2"
-                android:padding="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="MANAGEMENT"
-                android:textSize="12sp"
-                android:textColor="#36CB8A" />
+                android:padding="5dp"
+                android:text="MANAGE"
+                android:textColor="#00A695"
+                android:textSize="12sp" />
         </LinearLayout>
 
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="24dp"
+            android:layout_alignParentTop="true"
             android:orientation="vertical">
+
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/signup_alien_design"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/ic_alien_designer"
-                app:civ_border_width="2dp"
-                app:civ_border_color="@color/white"/>
+                app:civ_border_color="@color/white"
+                app:civ_border_width="1dp" />
+
             <TextView
                 android:id="@+id/textView3"
-                android:padding="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:padding="5dp"
                 android:text="DESIGN"
-                android:textSize="12sp"
-                android:textColor="#E15AAE" />
+                android:textColor="#E91E63"
+                android:textSize="12sp" />
         </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
 
-    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/bt_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/submit"
+        android:text="SUBMIT"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="24dp"/>
 
     <LinearLayout
         android:id="@+id/sign_up_lv3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@id/bt_submit"
         android:orientation="vertical"
-        android:layout_below="@id/sign_up_lv2">
+        android:layout_marginBottom="24dp">
 
         <EditText
-            android:background="@drawable/rectangle"
             android:layout_width="match_parent"
             android:layout_height="42dp"
-            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rectangle"
             android:ellipsize="start"
-            android:textColorHint="@color/colorPrimaryDark"
-            android:textColor="@color/colorAccent"
-            android:textSize="16sp"
+            android:gravity="center"
             android:hint="NAME"
-            android:layout_marginTop="10dp"/>
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textSize="12sp" />
+
         <EditText
-            android:background="@drawable/rectangle"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rectangle"
             android:ellipsize="start"
-            android:textColorHint="@color/colorPrimaryDark"
-            android:textColor="@color/colorAccent"
+            android:gravity="center"
             android:hint="EMAIL"
-            android:textSize="16sp"
-            android:layout_marginTop="10dp"/>
-        <EditText
-            android:background="@drawable/rectangle"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:gravity="center"
-            android:ellipsize="start"
             android:textColor="@color/colorAccent"
             android:textColorHint="@color/colorPrimaryDark"
-            android:hint="ORGANISATION"
-            android:textSize="16sp"
-            android:layout_marginTop="10dp"/>
+            android:textSize="12sp" />
+
         <EditText
-            android:background="@drawable/rectangle"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:gravity="center"
-            android:ellipsize="start"
-            android:textColorHint="@color/colorPrimaryDark"
-            android:textColor="@color/colorAccent"
-            android:hint="CONTACT"
-            android:textSize="16sp"
-            android:layout_marginTop="10dp"/>
-        <EditText
+            android:layout_marginTop="16dp"
             android:background="@drawable/rectangle"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:gravity="center"
             android:ellipsize="start"
-            android:textColorHint="@color/colorPrimaryDark"
-            android:textColor="@color/colorAccent"
-            android:inputType="textPassword"
+            android:gravity="center"
             android:hint="PASSWORD"
-            android:textSize="16sp"
-            android:layout_marginTop="10dp"/>
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textSize="12sp" />
+
         <EditText
-            android:background="@drawable/rectangle"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:gravity="center"
-            android:textColor="@color/colorAccent"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rectangle"
             android:ellipsize="start"
+            android:gravity="center"
+            android:hint="ORGANISATION"
+            android:inputType="textPassword"
+            android:textColor="@color/colorAccent"
             android:textColorHint="@color/colorPrimaryDark"
-            android:hint="LOCATION"
-            android:textSize="16sp"
-            android:layout_marginTop="10dp"/>
+            android:textSize="12sp" />
 
     </LinearLayout>
 
 
-    <LinearLayout
-        android:padding="10dp"
-        android:id="@+id/sign_up_lv4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@id/sign_up_lv3">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/colorAccent"
-            android:text="SUBMIT"
-            android:textColor="#FFFFFF"
-            android:padding="10dp"
-            android:layout_gravity="center_horizontal"/>
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:padding="10dp"
-        android:id="@+id/sign_up_lv5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@id/sign_up_lv4">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:textColor="@color/colorPrimaryDark"
-            android:text="Already have an account. Login here"
-            android:layout_gravity="center_horizontal"/>
-
-    </LinearLayout>
-
-
-</LinearLayout>
+</RelativeLayout>
 
