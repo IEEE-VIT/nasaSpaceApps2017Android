@@ -2,7 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.ieeevit.spaceappsvellore.CountdownFragment">
+    tools:context="com.ieeevit.spaceappsvellore.CountdownFragment"
+    android:background="@color/colorPrimary">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -15,36 +16,42 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-light"
             android:textSize="72sp"
-            android:text="00"/>
+            android:text="00"
+            android:textColor="@color/colorBottomBar"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="32sp"
-            android:text="d"/>
+            android:text="d"
+            android:textColor="@color/colorBottomBar"/>
         <TextView
             android:id="@+id/tv_hours"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-light"
             android:textSize="72sp"
-            android:text="00"/>
+            android:text="00"
+            android:textColor="@color/colorBottomBar"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="32sp"
-            android:text="h"/>
+            android:text="h"
+            android:textColor="@color/colorBottomBar"/>
         <TextView
             android:id="@+id/tv_mins"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-light"
             android:textSize="72sp"
-            android:text="00"/>
+            android:text="00"
+            android:textColor="@color/colorBottomBar"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="32sp"
-            android:text="m"/>
+            android:text="m"
+            android:textColor="@color/colorBottomBar"/>
     </LinearLayout>
 
 </RelativeLayout>
