@@ -43,13 +43,29 @@ public class MainActivity extends AppCompatActivity {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.setStatusBarColor(ContextCompat.getColor(this,R.color.colorPrimary));
 
-        //CountdownFragment todayFragment = CountdownFragment.newInstance();
-
-        ProfileFragment profileFragment = ProfileFragment.newInstance("","");
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.add(R.id.container, profileFragment).commit();
-
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                ft.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
+
+                switch (item.getItemId()){
+                    case R.id.navigation_home:
+                        ProfileFragment profileFragment = ProfileFragment.newInstance();
+                        ft.replace(R.id.container, profileFragment).commit();
+                        return true;
+
+                    case R.id.navigation_dashboard:
+                        CountdownFragment todayFragment = CountdownFragment.newInstance();
+                        ft.replace(R.id.container, todayFragment).commit();
+                        return true;
+                    default:
+                        return false;
+                }
+            }
+        });
     }
 }
