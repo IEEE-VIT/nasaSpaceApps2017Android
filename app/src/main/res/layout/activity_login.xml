@@ -33,6 +33,18 @@
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/bt_submit"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/submit"
+        android:text="LOGIN"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="24dp"/>
+
     <LinearLayout
         android:id="@+id/log_in_lv1"
         android:layout_width="match_parent"
@@ -69,17 +81,5 @@
             android:textSize="12sp" />
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/bt_submit"
-        android:layout_marginLeft="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/submit"
-        android:text="LOGIN"
-        android:textColor="#FFFFFF"
-        android:layout_marginBottom="24dp"/>
 
 </RelativeLayout>
