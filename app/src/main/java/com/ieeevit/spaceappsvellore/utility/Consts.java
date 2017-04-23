@@ -12,4 +12,14 @@ public class Consts {
     public static final String TOKEN_SP_KEY = "token";
     public static final String LEVEL_SP_KEY = "level";
     public static final String FCM_SP_KEY = "fcm";
+
+    //SKILL STRINGS
+
+    public static final String TECHNICAL = "technical";
+    public static final String DESIGN = "design";
+    public static final String MANAGEMENT = "management";
+
+    //RESPONSE CODES
+    public static final String SUCCESS = "0";
+    public static final String ERROR = "1";
 }

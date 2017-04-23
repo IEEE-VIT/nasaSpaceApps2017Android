@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -34,7 +33,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/bt_submit"
+        android:id="@+id/bt_login_submit"
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
         android:layout_width="match_parent"
@@ -49,7 +48,7 @@
         android:id="@+id/log_in_lv1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/bt_submit"
+        android:layout_above="@+id/bt_login_submit"
         android:orientation="vertical"
         android:layout_centerInParent="true"
         android:layout_marginBottom="24dp"
@@ -57,18 +56,21 @@
         android:paddingRight="32dp">
 
         <EditText
+            android:id="@+id/et_login_email"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/rectangle"
             android:ellipsize="start"
             android:gravity="center"
+            android:inputType="textEmailAddress"
             android:hint="EMAIL"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/colorPrimaryDark"
             android:textColorHint="@color/colorPrimaryDark"
             android:textSize="12sp" />
 
         <EditText
+            android:id="@+id/et_login_pass"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="16dp"
@@ -76,7 +78,8 @@
             android:ellipsize="start"
             android:gravity="center"
             android:hint="PASSWORD"
-            android:textColor="@color/colorAccent"
+            android:inputType="textPassword"
+            android:textColor="@color/colorPrimaryDark"
             android:textColorHint="@color/colorPrimaryDark"
             android:textSize="12sp" />
 

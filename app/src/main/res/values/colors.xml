@@ -6,4 +6,5 @@
     <color name="colorBoundary">#505774</color>
     <color name="colorBottomBar">#bdbdbd</color>
     <color name="white">#FFFFFF</color>
+    <color name="red">#d32f2f</color>
 </resources>
