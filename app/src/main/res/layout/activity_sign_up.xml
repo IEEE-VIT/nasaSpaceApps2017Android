@@ -160,6 +160,7 @@
         android:layout_marginBottom="24dp">
 
         <EditText
+            android:id="@+id/et_name"
             android:layout_width="match_parent"
             android:layout_height="42dp"
             android:layout_marginTop="16dp"
@@ -167,11 +168,13 @@
             android:ellipsize="start"
             android:gravity="center"
             android:hint="NAME"
-            android:textColor="@color/colorAccent"
+            android:inputType="textCapCharacters"
+            android:textColor="@color/colorPrimaryDark"
             android:textColorHint="@color/colorPrimaryDark"
             android:textSize="12sp" />
 
         <EditText
+            android:id="@+id/et_email"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="16dp"
@@ -179,11 +182,12 @@
             android:ellipsize="start"
             android:gravity="center"
             android:hint="EMAIL"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/colorPrimaryDark"
             android:textColorHint="@color/colorPrimaryDark"
             android:textSize="12sp" />
 
         <EditText
+            android:id="@+id/et_pass"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="16dp"
@@ -191,11 +195,13 @@
             android:ellipsize="start"
             android:gravity="center"
             android:hint="PASSWORD"
-            android:textColor="@color/colorAccent"
+            android:inputType="textPassword"
+            android:textColor="@color/colorPrimaryDark"
             android:textColorHint="@color/colorPrimaryDark"
             android:textSize="12sp" />
 
         <EditText
+            android:id="@+id/et_org"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="16dp"
@@ -203,8 +209,7 @@
             android:ellipsize="start"
             android:gravity="center"
             android:hint="ORGANISATION"
-            android:inputType="textPassword"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/colorPrimaryDark"
             android:textColorHint="@color/colorPrimaryDark"
             android:textSize="12sp" />
 
