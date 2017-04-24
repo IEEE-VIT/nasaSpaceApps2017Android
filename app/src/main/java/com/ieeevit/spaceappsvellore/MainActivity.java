@@ -13,6 +13,9 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
 
+import com.ieeevit.spaceappsvellore.models.SignUp;
+import com.ieeevit.spaceappsvellore.utility.Consts;
+
 public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -54,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (item.getItemId()){
                     case R.id.navigation_home:
-                        ProfileFragment profileFragment = ProfileFragment.newInstance();
+                        ProfileFragment profileFragment = ProfileFragment.newInstance((SignUp) getIntent().getSerializableExtra(Consts.PROFILE));
                         ft.replace(R.id.container, profileFragment).commit();
                         return true;
 

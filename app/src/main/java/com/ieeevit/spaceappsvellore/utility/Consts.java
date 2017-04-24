@@ -22,4 +22,7 @@ public class Consts {
     //RESPONSE CODES
     public static final String SUCCESS = "0";
     public static final String ERROR = "1";
+
+    //DATA SHARE CONSTS
+    public static final String PROFILE = "profile";
 }

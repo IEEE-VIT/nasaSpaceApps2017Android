@@ -4,7 +4,9 @@ package com.ieeevit.spaceappsvellore.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class SignUp {
+import java.io.Serializable;
+
+public class SignUp implements Serializable{
 
     @SerializedName("email")
     @Expose
@@ -27,6 +29,10 @@ public class SignUp {
     @SerializedName("skill")
     @Expose
     private String skill;
+
+    @SerializedName("activation_token")
+    @Expose
+    public String activation_token;
 
     public String getEmail() {
         return email;
@@ -82,6 +88,12 @@ public class SignUp {
 
     public void setSkill(String skill) {
         this.skill = skill;
+    }
+
+    public String getActivation_token(){return activation_token;}
+
+    public void setActivation_token(String activation_token){
+        this.activation_token = activation_token;
     }
 
 }
