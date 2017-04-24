@@ -1,5 +1,6 @@
 package com.ieeevit.spaceappsvellore;
 
+import android.content.ComponentCallbacks;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -34,6 +35,12 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        if(Preferences.getPrefs(Consts.TOKEN_SP_KEY, this).equals(Consts.NOT_FOUND)){
+            Intent intent = new Intent(LoginActivity.this, SplashActivity.class);
+            startActivity(intent);
+            finish();
+        }
 
         ButterKnife.bind(this);
 

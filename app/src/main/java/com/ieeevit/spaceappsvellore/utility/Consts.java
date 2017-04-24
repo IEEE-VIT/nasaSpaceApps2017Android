@@ -12,6 +12,7 @@ public class Consts {
     public static final String TOKEN_SP_KEY = "token";
     public static final String LEVEL_SP_KEY = "level";
     public static final String FCM_SP_KEY = "fcm";
+    public static final String NOT_FOUND = "not_found";
 
     //SKILL STRINGS
 
