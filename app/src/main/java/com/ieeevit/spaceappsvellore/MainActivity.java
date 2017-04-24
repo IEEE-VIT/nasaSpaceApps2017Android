@@ -12,6 +12,9 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.ieeevit.spaceappsvellore.models.SignUp;
+import com.ieeevit.spaceappsvellore.utility.Consts;
+
 public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -61,8 +64,9 @@ public class MainActivity extends AppCompatActivity {
                 ft.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
 
                 switch (item.getItemId()){
+
                     case R.id.navigation_profile:
-                        ProfileFragment profileFragment = ProfileFragment.newInstance();
+                        ProfileFragment profileFragment = ProfileFragment.newInstance((SignUp) getIntent().getSerializableExtra(Consts.PROFILE));
                         ft.replace(R.id.container, profileFragment).commit();
                         return true;
 

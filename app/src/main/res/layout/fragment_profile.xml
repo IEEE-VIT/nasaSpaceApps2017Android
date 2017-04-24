@@ -30,11 +30,10 @@
             app:cardElevation="1dp">
 
             <ImageView
+                android:id="@+id/iv_profile_qr"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:background="@drawable/profile_gradient"
-                android:padding="20dp"
-                android:src="@drawable/ic_alien_designer" />
+                android:padding="20dp" />
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
@@ -49,21 +48,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <ImageView
-                    android:id="@+id/profile_qr"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:src="@drawable/ic_qrcode_black_36dp"
-                    android:layout_alignParentRight="true"/>
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="25dp"
+                    android:layout_marginBottom="25dp"
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/tv_profile_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:lines="2"
@@ -74,6 +68,7 @@
                         android:textAllCaps="true"/>
 
                     <TextView
+                        android:id="@+id/tv_profile_location"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="21sp"
@@ -81,13 +76,6 @@
                         android:fontFamily="sans-serif-light"
                         android:drawableLeft="@drawable/ic_location_on_black_24dp"
                         android:drawablePadding="5dp"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do "
-                        android:fontFamily="sans-serif-light"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"/>
 
                 </LinearLayout>
 

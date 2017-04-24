@@ -16,7 +16,7 @@ public class Preferences {
 
     public static String getPrefs(String key, Context context){
         SharedPreferences sharedpreferences = context.getSharedPreferences("IEEEPreferences", Context.MODE_PRIVATE);
-        return sharedpreferences.getString(key, "not_found");
+        return sharedpreferences.getString(key, Consts.NOT_FOUND);
     }
 
     public static void clearPrefs(Context context){

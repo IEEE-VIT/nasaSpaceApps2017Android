@@ -1,5 +1,6 @@
 package com.ieeevit.spaceappsvellore;
 
+import android.content.ComponentCallbacks;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import com.ieeevit.spaceappsvellore.utility.DialogUtil;
 import com.ieeevit.spaceappsvellore.utility.Preferences;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -34,6 +36,14 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        if(Preferences.getPrefs(Consts.TOKEN_SP_KEY, this).equals(Consts.NOT_FOUND)){
+            Intent intent = new Intent(LoginActivity.this, SplashActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
+        ButterKnife.bind(this);
+
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                         if(response.body().getCode().equals(Consts.SUCCESS)){
                             Preferences.setPrefs(Consts.TOKEN_SP_KEY, response.body().getToken(), LoginActivity.this);
-                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            Intent intent = new Intent(LoginActivity.this, SplashActivity.class);
                             startActivity(intent);
                             finish();
                         }

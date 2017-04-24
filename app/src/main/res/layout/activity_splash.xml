@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ieeevit.spaceappsvellore.SplashActivity"
+    android:background="@color/colorPrimary">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Did you know?"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        android:fontFamily="sans-serif-light"
+        android:textStyle="bold"
+        android:layout_marginTop="60dp"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/img_spaceship"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:id="@+id/tv_fact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="More than 40,000 Americans have taken out insurance against being abducted by aliens."
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif-light"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="50dp"
+        android:textAlignment="center"
+        android:textSize="21sp"/>
+
+</RelativeLayout>

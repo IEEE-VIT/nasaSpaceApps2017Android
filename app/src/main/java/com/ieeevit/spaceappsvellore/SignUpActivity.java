@@ -82,7 +82,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                         dialog.hide();
                         if(response.body().getCode().equals(Consts.SUCCESS)){
                             Preferences.setPrefs(Consts.TOKEN_SP_KEY, response.body().getToken(), SignUpActivity.this);
-                            Intent intent = new Intent(SignUpActivity.this,MainActivity.class);
+                            Intent intent = new Intent(SignUpActivity.this,SplashActivity.class);
                             startActivity(intent);
                             finish();
                         }

@@ -5,6 +5,7 @@ import com.ieeevit.spaceappsvellore.models.SignUp;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface ApiInterface {
@@ -13,4 +14,7 @@ public interface ApiInterface {
 
     @POST("auth/save")
     Call<LoginResponse> signUp(@Body SignUp authRequest);
+
+    @GET("profile")
+    Call<SignUp> getProfile();
 }
