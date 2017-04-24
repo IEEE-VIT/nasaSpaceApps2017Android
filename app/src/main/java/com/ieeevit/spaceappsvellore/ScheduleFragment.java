@@ -21,7 +21,7 @@ public class ScheduleFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.activity_schedule_fragment, container, false);
+        View v = inflater.inflate(R.layout.fragment_schedule, container, false);
         RecyclerView recyclerView = (RecyclerView) v.findViewById(R.id.rv_schedule);
         ScheduleAdapter adapter = new ScheduleAdapter(time,title,data,getContext());
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());

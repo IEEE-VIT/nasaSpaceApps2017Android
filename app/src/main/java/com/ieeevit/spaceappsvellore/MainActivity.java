@@ -19,11 +19,11 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.navigation_home:
+                case R.id.navigation_profile:
                     return true;
                 case R.id.navigation_dashboard:
                     return true;
-                case R.id.navigation_notifications:
+                case R.id.navigation_timeline:
                     return true;
             }
             return false;
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 ft.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
 
                 switch (item.getItemId()){
-                    case R.id.navigation_home:
+                    case R.id.navigation_profile:
                         ProfileFragment profileFragment = ProfileFragment.newInstance();
                         ft.replace(R.id.container, profileFragment).commit();
                         return true;
@@ -70,6 +70,11 @@ public class MainActivity extends AppCompatActivity {
                         CountdownFragment todayFragment = CountdownFragment.newInstance();
                         ft.replace(R.id.container, todayFragment).commit();
                         return true;
+                    case R.id.navigation_timeline:
+                        ScheduleFragment scheduleFragment = new ScheduleFragment();
+                        ft.replace(R.id.container, scheduleFragment).commit();
+                        return true;
+
                     default:
                         return false;
                 }
