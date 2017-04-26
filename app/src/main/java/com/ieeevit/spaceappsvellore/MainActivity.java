@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.ieeevit.spaceappsvellore.models.MentorsResponse;
 import com.ieeevit.spaceappsvellore.models.SignUp;
 import com.ieeevit.spaceappsvellore.utility.Consts;
 
@@ -71,8 +72,8 @@ public class MainActivity extends AppCompatActivity {
                         return true;
 
                     case R.id.navigation_dashboard:
-                        CountdownFragment todayFragment = CountdownFragment.newInstance();
-                        ft.replace(R.id.container, todayFragment).commit();
+                        MentorFragment mentorFragment = MentorFragment.newInstance((MentorsResponse) getIntent().getSerializableExtra(Consts.MENTOR));
+                        ft.replace(R.id.container, mentorFragment).commit();
                         return true;
                     case R.id.navigation_timeline:
                         ScheduleFragment scheduleFragment = new ScheduleFragment();

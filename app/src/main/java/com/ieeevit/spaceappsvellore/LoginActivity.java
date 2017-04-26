@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        if(Preferences.getPrefs(Consts.TOKEN_SP_KEY, this).equals(Consts.NOT_FOUND)){
+        if(!Preferences.getPrefs(Consts.TOKEN_SP_KEY, this).equals(Consts.NOT_FOUND)){
             Intent intent = new Intent(LoginActivity.this, SplashActivity.class);
             startActivity(intent);
             finish();

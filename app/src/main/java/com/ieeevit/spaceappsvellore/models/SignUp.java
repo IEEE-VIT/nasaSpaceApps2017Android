@@ -95,5 +95,4 @@ public class SignUp implements Serializable{
     public void setActivation_token(String activation_token){
         this.activation_token = activation_token;
     }
-
 }

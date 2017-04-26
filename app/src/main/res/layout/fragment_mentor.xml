@@ -1,27 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/colorPrimary"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context="com.ieeevit.spaceappsvellore.ScheduleFragment">
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="com.ieeevit.spaceappsvellore.MentorFragment"
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:padding="12dp"
-        android:text="Schedule"
+        android:text="Our Mentors"
         android:fontFamily="sans-serif-light"
         android:textColor="#FFFFFF"
         android:textSize="23sp" />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_schedule"
+        android:id="@+id/rv_mentor"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="56dp"/>
+        android:layout_height="match_parent"/>
 
 </LinearLayout>
