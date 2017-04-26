@@ -39,6 +39,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     @BindView(R.id.et_email) TextView email;
     @BindView(R.id.et_org) TextView org;
     @BindView(R.id.et_pass) TextView pass;
+    @BindView(R.id.tv_signup_login) TextView login;
 
     String skill;
 
@@ -54,7 +55,14 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.setStatusBarColor(ContextCompat.getColor(this,R.color.colorPrimary));
 
-        button = (Button) findViewById(R.id.bt_submit);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
