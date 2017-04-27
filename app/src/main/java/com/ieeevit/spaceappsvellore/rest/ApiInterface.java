@@ -21,4 +21,7 @@ public interface ApiInterface {
 
     @GET("mentors")
     Call<MentorsResponse> getMentors();
+
+    @POST("admin/attendance")
+    Call<LoginResponse> postAttendance(@Body LoginResponse loginResponse);
 }

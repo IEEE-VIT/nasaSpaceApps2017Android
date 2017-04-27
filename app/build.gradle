@@ -55,6 +55,7 @@ dependencies {
     compile 'com.github.vipulasri:timelineview:1.0.5'
     compile 'com.jakewharton:butterknife:8.5.1'
     compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.dlazaro66.qrcodereaderview:qrcodereaderview:2.0.2'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
 }

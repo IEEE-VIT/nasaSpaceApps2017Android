@@ -27,4 +27,7 @@ public class Consts {
     //DATA SHARE CONSTS
     public static final String PROFILE = "profile";
     public static final String MENTOR = "mentor";
+    public static final String QRCODE = "qr";
+
+    public static final int QR_ATTENDANCE = 0;
 }
