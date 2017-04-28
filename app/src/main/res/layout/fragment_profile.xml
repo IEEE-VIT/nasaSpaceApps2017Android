@@ -122,7 +122,8 @@
                             android:textSize="23sp"
                             android:textColor="#FA9801"
                             android:fontFamily="sans-serif-light"
-                            android:text="WiFi"/>
+                            android:text="WiFi"
+                            android:layout_gravity="center_horizontal"/>
 
 
                         <TextView

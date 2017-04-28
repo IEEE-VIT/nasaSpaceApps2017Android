@@ -2,6 +2,7 @@ package com.ieeevit.spaceappsvellore;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +34,17 @@ public class ProfileFragment extends Fragment {
     @BindView(R.id.prof_wifi_pass)
     TextView wifi_password;
 
+    @BindView(R.id.cv_wifi)
+    CardView cv_wifi;
+
+    @BindView(R.id.cv_lunch1)
+    CardView cv_lunch1;
+
+    @BindView(R.id.cv_lunch2)
+    CardView cv_lunch2;
+
+    @BindView(R.id.cv_dinner)
+    CardView cv_dinner;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -66,10 +78,25 @@ public class ProfileFragment extends Fragment {
 
         name.setText(signUp.getName());
         location.setText(signUp.getCollege());
-        wifi_username.setText(signUp.getWifiUsername());
-        wifi_password.setText(signUp.getWifiPassword());
 
+        if(signUp.getWifiUsername()==null){
+            cv_wifi.setVisibility(View.GONE);
+        }
+        else {
+            wifi_username.setText(signUp.getWifiUsername());
+            wifi_password.setText(signUp.getWifiPassword());
+        }
+        if(signUp.getLunch1()){
+            cv_lunch1.setVisibility(View.GONE);
+        }
 
+        if(signUp.getLunch2()){
+            cv_lunch2.setVisibility(View.GONE);
+        }
+
+        if(signUp.getDinner()){
+            cv_dinner.setVisibility(View.GONE);
+        }
 
         return v;
     }
