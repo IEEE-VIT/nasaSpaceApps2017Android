@@ -35,6 +35,9 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
         holder.textView.setText(data[position]);
         holder.timeView.setText(time[position]);
         holder.titleView.setText(title[position]);
+
+
+
     }
 
     @Override

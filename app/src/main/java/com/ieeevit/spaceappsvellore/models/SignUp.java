@@ -5,91 +5,139 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class SignUp implements Serializable{
 
-    @SerializedName("email")
+    @SerializedName("time_sign_up")
     @Expose
-    private String email;
+    private String timeSignUp;
+    @SerializedName("lunch1")
+    @Expose
+    private Boolean lunch1;
+    @SerializedName("lunch2")
+    @Expose
+    private Boolean lunch2;
+    @SerializedName("dinner")
+    @Expose
+    private Boolean dinner;
     @SerializedName("admin")
+    @Expose
     private Boolean admin;
-    @SerializedName("password")
+    @SerializedName("attendance")
     @Expose
-    private String password;
-    @SerializedName("contact")
+    private Boolean attendance;
+    @SerializedName("activation_token")
     @Expose
-    private String contact;
-    @SerializedName("name")
+    private String activationToken;
+    @SerializedName("component_req")
     @Expose
-    private String name;
-    @SerializedName("college")
+    private List<Object> componentReq = null;
+    @SerializedName("component_given")
     @Expose
-    private String college;
-    @SerializedName("location")
+    private List<Object> componentGiven = null;
+    @SerializedName("__v")
     @Expose
-    private String location;
+    private Integer v;
     @SerializedName("skill")
     @Expose
     private String skill;
-
-    @SerializedName("activation_token")
+    @SerializedName("college")
     @Expose
-    public String activation_token;
+    private String college;
+    @SerializedName("name")
+    @Expose
+    private String name;
+    @SerializedName("password")
+    @Expose
+    private String password;
+    @SerializedName("email")
+    @Expose
+    private String email;
+    @SerializedName("wifi_username")
+    @Expose
+    private String wifiUsername;
+    @SerializedName("wifi_password")
+    @Expose
+    private String wifiPassword;
+    @SerializedName("_id")
+    @Expose
+    private String id;
 
-    public String getEmail() {
-        return email;
+    public String getTimeSignUp() {
+        return timeSignUp;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setTimeSignUp(String timeSignUp) {
+        this.timeSignUp = timeSignUp;
+    }
+
+    public void setLunch1(Boolean lunch1) {
+        this.lunch1 = lunch1;
+    }
+
+    public Boolean getLunch2() {
+        return lunch2;
+    }
+
+    public void setLunch2(Boolean lunch2) {
+        this.lunch2 = lunch2;
+    }
+
+    public Boolean getDinner() {
+        return dinner;
+    }
+
+    public void setDinner(Boolean dinner) {
+        this.dinner = dinner;
     }
 
     public Boolean getAdmin() {
-        return this.admin;
+        return admin;
     }
 
-    public void setAdmin(Boolean admin){
+    public void setAdmin(Boolean admin) {
         this.admin = admin;
     }
 
-    public String getPassword() {
-        return password;
+    public Boolean getAttendance() {
+        return attendance;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setAttendance(Boolean attendance) {
+        this.attendance = attendance;
     }
 
-    public String getContact() {
-        return contact;
+    public String getActivationToken() {
+        return activationToken;
     }
 
-    public void setContact(String contact) {
-        this.contact = contact;
+    public void setActivationToken(String activationToken) {
+        this.activationToken = activationToken;
     }
 
-    public String getName() {
-        return name;
+    public List<Object> getComponentReq() {
+        return componentReq;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setComponentReq(List<Object> componentReq) {
+        this.componentReq = componentReq;
     }
 
-    public String getCollege() {
-        return college;
+    public List<Object> getComponentGiven() {
+        return componentGiven;
     }
 
-    public void setCollege(String college) {
-        this.college = college;
+    public void setComponentGiven(List<Object> componentGiven) {
+        this.componentGiven = componentGiven;
     }
 
-    public String getLocation() {
-        return location;
+    public Integer getV() {
+        return v;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setV(Integer v) {
+        this.v = v;
     }
 
     public String getSkill() {
@@ -100,9 +148,51 @@ public class SignUp implements Serializable{
         this.skill = skill;
     }
 
-    public String getActivation_token(){return activation_token;}
+    public String getCollege() {
+        return college;
+    }
 
-    public void setActivation_token(String activation_token){
-        this.activation_token = activation_token;
+    public void setCollege(String college) {
+        this.college = college;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getWifiUsername() {
+        return wifiUsername;
+    }
+
+    public void setWifiUsername(String wifiUsername) {
+        this.wifiUsername = wifiUsername;
+    }
+
+    public String getWifiPassword() {
+        return wifiPassword;
+    }
+
+    public void setWifiPassword(String wifiPassword) {
+        this.wifiPassword = wifiPassword;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

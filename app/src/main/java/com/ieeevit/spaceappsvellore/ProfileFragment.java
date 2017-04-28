@@ -1,13 +1,11 @@
 package com.ieeevit.spaceappsvellore;
 
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -28,6 +26,13 @@ public class ProfileFragment extends Fragment {
 
     @BindView(R.id.iv_profile_qr)
     ImageView qr;
+
+    @BindView(R.id.prof_wifi_username)
+    TextView wifi_username;
+
+    @BindView(R.id.prof_wifi_pass)
+    TextView wifi_password;
+
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -56,11 +61,13 @@ public class ProfileFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_profile, container, false);
         ButterKnife.bind(this, v);
 
-        Glide.with(this).load("http://api.qrserver.com/v1/create-qr-code/?data=" + signUp.getActivation_token() + "&size=100x100")
+        Glide.with(this).load("http://api.qrserver.com/v1/create-qr-code/?data=" + signUp.getActivationToken() + "&size=100x100")
                 .into(qr);
 
         name.setText(signUp.getName());
         location.setText(signUp.getCollege());
+        wifi_username.setText(signUp.getWifiUsername());
+        wifi_password.setText(signUp.getWifiPassword());
 
         return v;
     }

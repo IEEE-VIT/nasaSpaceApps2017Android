@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
+    android:layout_marginBottom="56dp"
     tools:context="com.ieeevit.spaceappsvellore.ProfileFragment">
 
     <LinearLayout
@@ -91,22 +92,155 @@
             app:cardCornerRadius="0dp"
             app:cardElevation="1dp">
 
-            <TextView
-                android:id="@+id/tv_team_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:text="Coming Soon"
-                android:layout_gravity="center_horizontal"
-                android:fontFamily="sans-serif-light"
-                android:padding="10dp"/>
-<!--
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_control_point_black_24dp"
-                android:layout_gravity="end"
-                android:layout_margin="10dp"/>-->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="6dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:padding="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="23sp"
+                            android:textColor="#FA9801"
+                            android:fontFamily="sans-serif-light"
+                            android:text="WiFi"/>
+
+
+                        <TextView
+                            android:padding="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-light"
+                            android:id="@+id/prof_wifi_username" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/prof_wifi_pass"
+                            android:fontFamily="sans-serif-light"
+                            android:padding="10dp"/>
+
+                    </LinearLayout>
+
+
+                </android.support.v7.widget.CardView>
+
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="23sp"
+                        android:fontFamily="sans-serif-light"
+                        android:padding="5dp"
+                        android:text="LUNCH"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="#FA9801"/>
+
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:src="@drawable/img_lunch1"
+                        android:layout_gravity="center_horizontal"/>
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="200dp"
+                    android:padding="6dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="23sp"
+                        android:text="DINNER"
+                        android:padding="5dp"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="#FA9801"
+                        android:fontFamily="sans-serif-light"/>
+
+                    <ImageView
+
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:src="@drawable/img_dinner"
+                        android:layout_gravity="center_horizontal"/>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="23sp"
+                        android:text="LUNCH"
+                        android:fontFamily="sans-serif-light"
+                        android:padding="5dp"
+                        android:textColor="#FA9801"/>
+
+                    <ImageView
+                        android:src="@drawable/img_lunch2"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_gravity="center_horizontal"/>
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+        </HorizontalScrollView>
 
         </android.support.v7.widget.CardView>
 
