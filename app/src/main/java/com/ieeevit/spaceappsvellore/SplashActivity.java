@@ -1,6 +1,7 @@
 package com.ieeevit.spaceappsvellore;
 
 import android.content.Intent;
+import android.os.Build;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -45,8 +46,10 @@ public class SplashActivity extends AppCompatActivity {
 
         Window window = getWindow();
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        window.setStatusBarColor(ContextCompat.getColor(this,R.color.colorPrimary));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.setStatusBarColor(ContextCompat.getColor(this,R.color.colorPrimary));
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        }
 
         Random ran = new Random();
         int x = ran.nextInt(3);
@@ -62,19 +65,26 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<SignUp> call, final Response<SignUp> profileresponse) {
 
-                mentorsResponseCall.enqueue(new Callback<MentorsResponse>() {
-                    @Override
-                    public void onResponse(Call<MentorsResponse> call, Response<MentorsResponse> response) {
-                        Intent intent = new Intent(SplashActivity.this, MainActivity.class);
-                        intent.putExtra(Consts.PROFILE, profileresponse.body());
-                        intent.putExtra(Consts.MENTOR, response.body());
-                        startActivity(intent);
-                        finish();
-                    }
+                if(profileresponse.body().getAdmin()){
+                    Intent intent = new Intent(SplashActivity.this, AdminActivity.class);
+                    startActivity(intent);
+                }
+                else {
+                    mentorsResponseCall.enqueue(new Callback<MentorsResponse>() {
+                        @Override
+                        public void onResponse(Call<MentorsResponse> call, Response<MentorsResponse> response) {
+                            Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                            intent.putExtra(Consts.PROFILE, profileresponse.body());
+                            intent.putExtra(Consts.MENTOR, response.body());
+                            startActivity(intent);
+                            finish();
+                        }
 
-                    @Override
-                    public void onFailure(Call<MentorsResponse> call, Throwable t) {}
-                });
+                        @Override
+                        public void onFailure(Call<MentorsResponse> call, Throwable t) {
+                        }
+                    });
+                }
             }
 
             @Override

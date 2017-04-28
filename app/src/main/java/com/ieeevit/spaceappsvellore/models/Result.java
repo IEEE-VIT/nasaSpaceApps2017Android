@@ -1,4 +1,3 @@
-
 package com.ieeevit.spaceappsvellore.models;
 
 import com.google.gson.annotations.Expose;
@@ -53,4 +52,6 @@ public class Result implements Serializable{
         this.image = image;
     }
 
+
 }
+

@@ -72,10 +72,6 @@ public class SignUp implements Serializable{
         this.timeSignUp = timeSignUp;
     }
 
-    public Boolean getLunch1() {
-        return lunch1;
-    }
-
     public void setLunch1(Boolean lunch1) {
         this.lunch1 = lunch1;
     }
@@ -166,14 +162,6 @@ public class SignUp implements Serializable{
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getEmail() {
