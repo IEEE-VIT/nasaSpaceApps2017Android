@@ -11,6 +11,8 @@ public class SignUp implements Serializable{
     @SerializedName("email")
     @Expose
     private String email;
+    @SerializedName("admin")
+    private Boolean admin;
     @SerializedName("password")
     @Expose
     private String password;
@@ -40,6 +42,14 @@ public class SignUp implements Serializable{
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Boolean getAdmin() {
+        return this.admin;
+    }
+
+    public void setAdmin(Boolean admin){
+        this.admin = admin;
     }
 
     public String getPassword() {
