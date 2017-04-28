@@ -69,6 +69,8 @@ public class ProfileFragment extends Fragment {
         wifi_username.setText(signUp.getWifiUsername());
         wifi_password.setText(signUp.getWifiPassword());
 
+
+
         return v;
     }
 
