@@ -30,4 +30,7 @@ public class Consts {
     public static final String QRCODE = "qr";
 
     public static final int QR_ATTENDANCE = 0;
+    public static final int QR_LUNCH1 = 1;
+    public static final int QR_LUNCH2 = 2;
+    public static final int QR_DINNER = 3;
 }

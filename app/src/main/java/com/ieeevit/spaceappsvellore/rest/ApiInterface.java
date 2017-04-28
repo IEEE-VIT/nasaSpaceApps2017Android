@@ -24,4 +24,13 @@ public interface ApiInterface {
 
     @POST("admin/attendance")
     Call<LoginResponse> postAttendance(@Body LoginResponse loginResponse);
+
+    @POST("admin/lunch1")
+    Call<LoginResponse> postLunch1(@Body LoginResponse loginResponse);
+
+    @POST("admin/lunch2")
+    Call<LoginResponse> postLunch2(@Body LoginResponse loginResponse);
+
+    @POST("admin/dinner")
+    Call<LoginResponse> postDinner(@Body LoginResponse loginResponse);
 }
