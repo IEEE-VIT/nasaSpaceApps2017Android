@@ -10,10 +10,6 @@ import android.widget.TextView;
 import com.github.vipulasri.timelineview.TimelineView;
 import com.ieeevit.spaceappsvellore.R;
 
-/**
- * Created by mayur on 23/04/17.
- */
-
 public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ScheduleViewHolder> {
 
     String[] data ;
@@ -54,7 +50,6 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
         return TimelineView.getTimeLineViewType(position,getItemCount());
     }
 
-
     public static class ScheduleViewHolder extends RecyclerView.ViewHolder{
 
         TextView textView,timeView,titleView;
@@ -67,7 +62,5 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
             timeView = (TextView) itemView.findViewById(R.id.row_time);
             titleView = (TextView) itemView.findViewById(R.id.row_title);
         }
-
     }
-
 }

@@ -19,13 +19,14 @@
         android:layout_centerHorizontal="true"/>
 
     <ImageView
+        android:id="@+id/iv_splash_fact"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:src="@drawable/img_spaceship"
         android:layout_centerInParent="true"/>
 
     <TextView
-        android:id="@+id/tv_fact"
+        android:id="@+id/tv_splash_fact"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="More than 40,000 Americans have taken out insurance against being abducted by aliens."

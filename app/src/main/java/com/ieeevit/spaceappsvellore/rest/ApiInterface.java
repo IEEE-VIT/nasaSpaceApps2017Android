@@ -1,6 +1,7 @@
 package com.ieeevit.spaceappsvellore.rest;
 
 import com.ieeevit.spaceappsvellore.models.LoginResponse;
+import com.ieeevit.spaceappsvellore.models.MentorsResponse;
 import com.ieeevit.spaceappsvellore.models.SignUp;
 
 import retrofit2.Call;
@@ -17,4 +18,10 @@ public interface ApiInterface {
 
     @GET("profile")
     Call<SignUp> getProfile();
+
+    @GET("mentors")
+    Call<MentorsResponse> getMentors();
+
+    @POST("admin/attendance")
+    Call<LoginResponse> postAttendance(@Body LoginResponse loginResponse);
 }

@@ -9,7 +9,7 @@
     android:paddingRight="32dp"
     tools:context="com.ieeevit.spaceappsvellore.SignUpActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/sign_up_lv1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,14 +18,25 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
             android:padding="12dp"
             android:text="Sign up"
             android:fontFamily="sans-serif-light"
             android:textColor="#FFFFFF"
             android:textSize="23sp" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/tv_signup_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="Log In"
+            android:fontFamily="sans-serif-light"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/sign_up_lv2"

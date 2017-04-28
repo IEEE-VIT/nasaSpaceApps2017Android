@@ -39,6 +39,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     @BindView(R.id.et_email) TextView email;
     @BindView(R.id.et_org) TextView org;
     @BindView(R.id.et_pass) TextView pass;
+    @BindView(R.id.tv_signup_login) TextView login;
 
     String skill;
 
@@ -54,54 +55,66 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.setStatusBarColor(ContextCompat.getColor(this,R.color.colorPrimary));
 
-        button = (Button) findViewById(R.id.bt_submit);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                final ProgressDialog dialog = new ProgressDialog(SignUpActivity.this);
-                dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-                dialog.setMessage("Loading. Please wait...");
-                dialog.setIndeterminate(true);
-                dialog.setCanceledOnTouchOutside(false);
-                dialog.show();
+                if(skill == null || org.getText().toString().equals("") || name.getText().toString().equals("") || email.getText().toString().equals("") || pass.getText().toString().equals("")){
+                    DialogUtil.createDialog("Please fill in all fields correctly!", SignUpActivity.this, null);
+                }
+                else {
 
-                final ApiInterface apiInterface = ApiClient.getClient(SignUpActivity.this).create(ApiInterface.class);
-                SignUp signUp = new SignUp();
-                signUp.setCollege(org.getText().toString());
-                signUp.setName(name.getText().toString());
-                signUp.setSkill(skill);
-                signUp.setEmail(email.getText().toString());
-                signUp.setPassword(pass.getText().toString());
-                Call<LoginResponse> signUpCall = apiInterface.signUp(signUp);
+                    final ProgressDialog dialog = new ProgressDialog(SignUpActivity.this);
+                    dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                    dialog.setMessage("Loading. Please wait...");
+                    dialog.setIndeterminate(true);
+                    dialog.setCanceledOnTouchOutside(false);
+                    dialog.show();
 
-                signUpCall.enqueue(new Callback<LoginResponse>() {
-                    @Override
-                    public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-                        dialog.hide();
-                        if(response.body().getCode().equals(Consts.SUCCESS)){
-                            Preferences.setPrefs(Consts.TOKEN_SP_KEY, response.body().getToken(), SignUpActivity.this);
-                            Intent intent = new Intent(SignUpActivity.this,SplashActivity.class);
-                            startActivity(intent);
-                            finish();
+                    final ApiInterface apiInterface = ApiClient.getClient(SignUpActivity.this).create(ApiInterface.class);
+                    SignUp signUp = new SignUp();
+                    signUp.setCollege(org.getText().toString());
+                    signUp.setName(name.getText().toString());
+                    signUp.setSkill(skill);
+                    signUp.setEmail(email.getText().toString());
+                    signUp.setPassword(pass.getText().toString());
+                    Call<LoginResponse> signUpCall = apiInterface.signUp(signUp);
+
+                    signUpCall.enqueue(new Callback<LoginResponse>() {
+                        @Override
+                        public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                            dialog.hide();
+                            if (response.body().getCode().equals(Consts.SUCCESS)) {
+                                Preferences.setPrefs(Consts.TOKEN_SP_KEY, response.body().getToken(), SignUpActivity.this);
+                                Intent intent = new Intent(SignUpActivity.this, SplashActivity.class);
+                                startActivity(intent);
+                                finish();
+                            } else {
+                                DialogUtil.createDialog(response.body().getMessage(), SignUpActivity.this, new DialogUtil.OnPositiveButtonClick() {
+                                    @Override
+                                    public void onClick() {
+                                        Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
+                                        startActivity(intent);
+                                    }
+                                });
+                            }
                         }
-                        else{
-                            DialogUtil.createDialog(response.body().getMessage(), SignUpActivity.this, new DialogUtil.OnPositiveButtonClick() {
-                                @Override
-                                public void onClick() {
-                                    Intent intent = new Intent(SignUpActivity.this,LoginActivity.class);
-                                    startActivity(intent);
-                                }
-                            });
-                        }
-                    }
 
-                    @Override
-                    public void onFailure(Call<LoginResponse> call, Throwable t) {
-                        dialog.hide();
-                    }
-                });
+                        @Override
+                        public void onFailure(Call<LoginResponse> call, Throwable t) {
+                            dialog.hide();
+                        }
+                    });
+                }
             }
         });
 
