@@ -68,6 +68,7 @@ public class SplashActivity extends AppCompatActivity {
                 if(profileresponse.body().getAdmin()){
                     Intent intent = new Intent(SplashActivity.this, AdminActivity.class);
                     startActivity(intent);
+                    finish();
                 }
                 else {
                     mentorsResponseCall.enqueue(new Callback<MentorsResponse>() {
