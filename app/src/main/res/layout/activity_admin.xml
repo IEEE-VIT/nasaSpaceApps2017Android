@@ -13,6 +13,12 @@
         android:text="Mark Attendance"/>
 
     <Button
+        android:id="@+id/bt_qr_wifi"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Give WiFi"/>
+
+    <Button
         android:id="@+id/bt_qr_lunch1"
         android:layout_width="match_parent"
         android:layout_height="100dp"

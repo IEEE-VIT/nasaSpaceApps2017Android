@@ -33,4 +33,7 @@ public interface ApiInterface {
 
     @POST("admin/dinner")
     Call<LoginResponse> postDinner(@Body LoginResponse loginResponse);
+
+    @POST("admin/wifi")
+    Call<LoginResponse> postWifi(@Body LoginResponse loginResponse);
 }
