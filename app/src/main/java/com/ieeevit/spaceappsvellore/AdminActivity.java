@@ -15,6 +15,7 @@ import com.ieeevit.spaceappsvellore.models.LoginResponse;
 import com.ieeevit.spaceappsvellore.rest.ApiClient;
 import com.ieeevit.spaceappsvellore.rest.ApiInterface;
 import com.ieeevit.spaceappsvellore.utility.Consts;
+import com.ieeevit.spaceappsvellore.utility.DialogUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -27,6 +28,15 @@ public class AdminActivity extends AppCompatActivity {
     @BindView(R.id.bt_qr_attendance)
     Button attendance;
 
+    @BindView(R.id.bt_qr_lunch1)
+    Button lunch1;
+
+    @BindView(R.id.bt_qr_lunch2)
+    Button lunch2;
+
+    @BindView(R.id.bt_qr_dinner)
+    Button dinner;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +46,7 @@ public class AdminActivity extends AppCompatActivity {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(new String[] {Manifest.permission.CAMERA}, 1);
+                requestPermissions(new String[]{Manifest.permission.CAMERA}, 1);
             }
         }
 
@@ -44,7 +54,28 @@ public class AdminActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AdminActivity.this, QRScanActivity.class);
-                startActivityForResult(intent, 0);
+                startActivityForResult(intent, Consts.QR_ATTENDANCE);
+            }
+        });
+        lunch1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminActivity.this, QRScanActivity.class);
+                startActivityForResult(intent, Consts.QR_LUNCH1);
+            }
+        });
+        lunch2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminActivity.this, QRScanActivity.class);
+                startActivityForResult(intent, Consts.QR_LUNCH2);
+            }
+        });
+        dinner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminActivity.this, QRScanActivity.class);
+                startActivityForResult(intent, Consts.QR_DINNER);
             }
         });
     }
@@ -69,21 +100,39 @@ public class AdminActivity extends AppCompatActivity {
                 LoginResponse loginResponse = new LoginResponse();
                 loginResponse.setCode(requiredValue);
 
-                if(requestCode == Consts.QR_ATTENDANCE){
-                    Call<LoginResponse> loginResponseCall = apiInterface.postAttendance(loginResponse);
-                    loginResponseCall.enqueue(new Callback<LoginResponse>() {
-                        @Override
-                        public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-                            dialog.hide();
-                            Toast.makeText(AdminActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                        }
+                Call<LoginResponse> loginResponseCall;
 
-                        @Override
-                        public void onFailure(Call<LoginResponse> call, Throwable t) {
-                            dialog.hide();
-                        }
-                    });
+                switch (requestCode) {
+                    case Consts.QR_ATTENDANCE:
+                        loginResponseCall = apiInterface.postAttendance(loginResponse);
+                        break;
+                    case Consts.QR_LUNCH1:
+                        loginResponseCall = apiInterface.postLunch1(loginResponse);
+                        break;
+                    case Consts.QR_LUNCH2:
+                        loginResponseCall = apiInterface.postLunch2(loginResponse);
+                        break;
+                    case Consts.QR_DINNER:
+                        loginResponseCall = apiInterface.postDinner(loginResponse);
+                        break;
+                    default:
+                        loginResponseCall = apiInterface.postAttendance(loginResponse);
+                        break;
                 }
+
+                loginResponseCall.enqueue(new Callback<LoginResponse>() {
+                    @Override
+                    public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                        dialog.hide();
+                        Toast.makeText(AdminActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onFailure(Call<LoginResponse> call, Throwable t) {
+                        dialog.hide();
+                        DialogUtil.createDialog("Network Problem! Please try again!", AdminActivity.this, null);
+                    }
+                });
             }
         } catch (Exception ex) {
             Toast.makeText(this, ex.toString(), Toast.LENGTH_SHORT).show();
