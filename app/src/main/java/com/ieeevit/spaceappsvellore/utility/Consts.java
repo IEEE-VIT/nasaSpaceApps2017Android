@@ -33,4 +33,5 @@ public class Consts {
     public static final int QR_LUNCH1 = 1;
     public static final int QR_LUNCH2 = 2;
     public static final int QR_DINNER = 3;
+    public static final int QR_WIFI = 4;
 }

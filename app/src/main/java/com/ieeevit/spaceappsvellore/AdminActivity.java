@@ -37,6 +37,9 @@ public class AdminActivity extends AppCompatActivity {
     @BindView(R.id.bt_qr_dinner)
     Button dinner;
 
+    @BindView(R.id.bt_qr_wifi)
+    Button wifi;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,6 +81,13 @@ public class AdminActivity extends AppCompatActivity {
                 startActivityForResult(intent, Consts.QR_DINNER);
             }
         });
+        wifi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminActivity.this, QRScanActivity.class);
+                startActivityForResult(intent, Consts.QR_WIFI);
+            }
+        });
     }
 
     @Override
@@ -115,24 +125,32 @@ public class AdminActivity extends AppCompatActivity {
                     case Consts.QR_DINNER:
                         loginResponseCall = apiInterface.postDinner(loginResponse);
                         break;
+                    case Consts.QR_WIFI:
+                        loginResponseCall = apiInterface.postWifi(loginResponse);
+                        break;
                     default:
                         loginResponseCall = apiInterface.postAttendance(loginResponse);
                         break;
                 }
 
-                loginResponseCall.enqueue(new Callback<LoginResponse>() {
-                    @Override
-                    public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-                        dialog.hide();
-                        Toast.makeText(AdminActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                    }
+                if(requiredValue==null){
+                    dialog.hide();
+                }
+                else {
+                    loginResponseCall.enqueue(new Callback<LoginResponse>() {
+                        @Override
+                        public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                            dialog.hide();
+                            Toast.makeText(AdminActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
 
-                    @Override
-                    public void onFailure(Call<LoginResponse> call, Throwable t) {
-                        dialog.hide();
-                        DialogUtil.createDialog("Network Problem! Please try again!", AdminActivity.this, null);
-                    }
-                });
+                        @Override
+                        public void onFailure(Call<LoginResponse> call, Throwable t) {
+                            dialog.hide();
+                            DialogUtil.createDialog("Network Problem! Please try again!", AdminActivity.this, null);
+                        }
+                    });
+                }
             }
         } catch (Exception ex) {
             Toast.makeText(this, ex.toString(), Toast.LENGTH_SHORT).show();
