@@ -64,6 +64,14 @@ public class SignUp implements Serializable{
     @Expose
     private String id;
 
+    public String getPassword(){
+        return this.password;
+    }
+
+    public void setPassword(String password){
+        this.password = password;
+    }
+
     public String getTimeSignUp() {
         return timeSignUp;
     }
