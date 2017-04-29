@@ -174,7 +174,7 @@
                         android:layout_width="120dp"
                         android:layout_height="120dp"
                         android:src="@drawable/img_lunch1"
-                        android:layout_gravity="center_horizontal"/>
+                        android:layout_gravity="center"/>
                     </LinearLayout>
 
                 </android.support.v7.widget.CardView>
@@ -198,7 +198,7 @@
                         android:textSize="23sp"
                         android:text="DINNER"
                         android:padding="5dp"
-                        android:layout_gravity="center_horizontal"
+                        android:layout_gravity="center"
                         android:textColor="#FA9801"
                         android:fontFamily="sans-serif-light"/>
 
@@ -239,7 +239,7 @@
                         android:src="@drawable/img_lunch2"
                         android:layout_width="120dp"
                         android:layout_height="120dp"
-                        android:layout_gravity="center_horizontal"/>
+                        android:layout_gravity=""/>
                     </LinearLayout>
 
                 </android.support.v7.widget.CardView>

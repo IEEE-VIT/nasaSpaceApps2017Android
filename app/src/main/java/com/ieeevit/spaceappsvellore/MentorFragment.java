@@ -1,6 +1,5 @@
 package com.ieeevit.spaceappsvellore;
 
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -55,5 +54,4 @@ public class MentorFragment extends Fragment {
 
         return v;
     }
-
 }

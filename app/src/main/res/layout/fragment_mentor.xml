@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     tools:context="com.ieeevit.spaceappsvellore.MentorFragment"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_marginBottom="50dp">
 
     <TextView
         android:layout_width="wrap_content"
